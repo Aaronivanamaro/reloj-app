@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<header>
+    <h1>Reloj</h1>
+    <select id="select-theme" onchange="changeTheme();">
+        <option disabled selected>Aburrido</option>
+        <option value="romantic">Romántico</option>
+        <option value="family">Familiar</option>
+        <option value="frozen">Congelado</option>
+        <option value="tropical">Tropical</option>
+    </select>
+</header>
+
+<div class="container">
+    <div class="ball"></div>
+    <div class="inner-circle">
+        <div class="first-hand"></div>
+        <div class="second-hand"></div>
+        <div class="thin-hand"></div>
+    </div>
+    <div class="n-container">
+        <p class="twelve">12</p>
+        <div class="three-nine">
+            <p class="nine">9</p>
+            <p class="three">3</p>
+        </div>
+        <p class="six">6</p>
+    </div>
+    <div class="hyphen-container">
+        <div class="c-1">
+            <div class="eleven hyphen"></div>
+            <div class="one hyphen"></div>
+        </div>
+        <div class="c-2">
+            <div class="ten hyphen"></div>
+            <div class="two hyphen"></div>
+        </div>
+        <div class="c-3">
+            <div class="eight hyphen"></div>
+            <div class="four hyphen"></div>
+        </div>
+        <div class="c-4">
+            <div class="seven hyphen"></div>
+            <div class="five hyphen"></div>
+        </div>
+    </div>
+    
+</div>
+
+<script src="/script.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+
+--bgr-clr: #ffffff;
+--shadow-1:rgba(0,0,0,0.4);
+--clr-border: #0a0a0a;
+--clr-silver: rgb(245, 245, 245);
+--txt-shadow: rgba(0,0,0,0.9);
+--clr-redish: rgb(0, 0, 0);
+--clr-light: rgb(228, 226, 226);
+--bgr-img:url(/images/boring.jpg);
+
+}
+
+body {
+    margin:0;
+    background-color: var(--bgr-clr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:'RocknRoll One', sans-serif;
+    transition: ease 2s;
+}
+/*----------THEMES VARIABLES------------*/
+.romantic-theme {  
+    --bgr-clr: #0a0a0a;
+    --clr-border: rgba(211, 195, 52,0.95);
+    --clr-silver: rgba(245,245,245,0.8);
+    --txt-shadow: rgba(0,0,0,0.9);
+    --clr-redish: rgb(173, 42, 42);
+    --clr-light: rgb(250, 240, 151);
+    --bgr-img:url(/images/romantic.jpg);
+    }
+.family-theme {
+    --bgr-clr: #0a0a0a;
+    --clr-border: rgba(202, 106, 27, 0.95);
+    --clr-silver: rgb(211, 231, 230);
+    --txt-shadow: rgba(0,0,0,0.9);
+    --clr-redish: rgba(212, 119, 13, 0.924);
+    --clr-light: rgb(255, 192, 91);
+    --bgr-img:url(/images/family.jpg);
+    }
+.frozen-theme {
+    --bgr-clr: #0a0a0a;
+    --clr-border: rgba(52, 174, 211, 0.95);
+    --clr-silver: rgb(211, 231, 230);
+    --txt-shadow: rgba(0,0,0,0.9);
+    --clr-redish: rgba(41, 175, 81, 0.924);
+    --clr-light: rgb(246, 246, 246);
+    --bgr-img:url(/images/winter.jpg);
+    }
+.tropical-theme {
+    --bgr-clr: #0a0a0a;
+    --clr-border: rgba(52, 211, 52, 0.95);
+    --clr-silver: rgb(124, 250, 202);
+    --txt-shadow: rgba(0,0,0,0.9);
+    --clr-redish: rgba(223, 149, 11, 0.924);
+    --clr-light: rgb(246, 244, 99);
+    --bgr-img:url(/images/tropical.jpg);
+    }
+/*----------THEMES VARIABLES------------*/
+
+/*----------HEADER----------*/
+header {
+    margin-top: 1.5rem;
+    margin-bottom: 3.5rem;
+    display: flex;
+}
+h1, select {
+    text-shadow: 2.5px 2.5px 6px var(--clr-redish);
+    color:var(--clr-light);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+select {
+    height:3.5rem;
+    margin-left: 1rem;
+    font-family:'RocknRoll One', sans-serif;
+    margin-top:1.7rem;
+    background-color: rgba(0,0,0,0);
+    border:none;
+    font-weight: 900;
+}
+option {
+    color:#0a0a0a;
+    background-color: var(--clr-silver);
+    cursor:pointer;
+}
+option[selected] {
+    color:gray;
+}
+
+/*----------HEADER----------*/
+
+/*----------RELOJ-----------*/
+.container, 
+.inner-circle, 
+.n-container, 
+.hyphen-container {
+    height: 25rem;
+    width:25rem;
+    border-radius: 100%;
+}
+.container {
+    z-index: -2;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.ball {
+    width:1.3rem;
+    height: 1.3rem;
+    background-color: var(--clr-light);
+    border:solid var(--clr-silver) 0.5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 30;
+    margin-top: 12rem;
+    margin-left: 12rem;
+    border-radius: 100%;
+}
+.inner-circle {
+    z-index: 2;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    position: relative;
+}
+.first-hand, .second-hand, .thin-hand {
+    width:9.12rem;
+    height:2.2px;
+    background-color:var(--clr-border);
+    border:solid var(--clr-border) 2.2px;
+    transform: rotate(90deg);
+    position: absolute;
+    top:49.2%;
+    transform-origin:100%;
+    z-index: 20;
+    transition:all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    box-shadow: 0 0 5px 3px var(--shadow-1);
+}
+.first-hand {
+    width:7.5rem;
+    height:8px;
+    border:solid var(--clr-border) 3px;
+    left:21%;
+}
+.thin-hand {
+    width:8.2rem;
+    left:18%;
+    height: 1px;
+    border:solid var(--clr-silver) 1px;
+    background-color: var(--clr-silver);
+}
+.second-hand {
+    top:49.6%;
+    left:13.8%;
+}
+.n-container {
+    z-index: 1;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    position: absolute;
+    background-color: var(--shadow-1);
+    background-image: var(--bgr-img);
+    background-blend-mode:color;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color:var(--clr-light);
+    text-shadow: 2px 1.5px 3px var(--txt-shadow);
+    font-size: 2.5rem;
+    position: absolute;
+    box-shadow: 0 0 0 10px var(--clr-border);
+    filter: drop-shadow(0 0 3px var(--clr-light));
+}   
+.twelve {
+    margin-left:42.5%;
+    margin-top:7px;
+}
+.three-nine {
+    display: flex;
+    justify-content: space-between;
+    margin-top:4rem;
+}
+.three {
+    margin-right: 1.3rem;
+}
+.nine {
+    margin-left: 1.3rem;
+}
+.six {
+    margin-left:48%;
+    margin-top: 4.3rem;
+}
+.hyphen-container {
+    z-index: 10;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.hyphen {
+    width:2rem;
+    height: 2.5px;
+    background-color: var(--clr-border);
+    border: solid var(--clr-light) 2px;
+    box-shadow: 0 0 7px 2.5px var(--shadow-1);
+}
+.c-1,
+.c-2,
+.c-3,
+.c-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:1rem;
+}
+.c-1 {
+    margin-top:3.5rem;
+}
+.c-2 {
+    margin-top:3.4rem;
+}
+.c-3 {
+    margin-top:10.25rem;
+}
+.c-4 {
+    margin-top:3.5rem;
+}
+.eleven {
+    transform: rotate(60deg);
+    margin-left:5.2rem;
+}
+.one {
+    transform: rotate(120deg);
+    margin-right:5.2rem;
+}
+.two {
+    transform: rotate(150deg);
+    margin-right:1.56rem;
+}
+.ten {
+    transform: rotate(30deg);
+    margin-left:1.56rem;
+}
+.four {
+    transform: rotate(210deg);
+    margin-right:1.8rem;
+}
+.eight {
+    transform: rotate(330deg);
+    margin-left: 1.8rem;
+}
+.five {
+    transform: rotate(240deg);
+    margin-right: 5.5rem;
+}
+.seven {
+    transform: rotate(300deg);
+    margin-left: 5.5rem;
+}
+/*----------RELOJ-----------*/
+
+/*----------MEDIA QUERIES-------*/
+
+@media (max-width: 450px) {
+    header {
+        margin-top: 0.8rem;
+        margin-bottom: 2.5rem;
+    }
+    h1, select {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    select {
+        margin-top:1.4rem;
+    }
+    .container, 
+    .inner-circle, 
+    .n-container, 
+    .hyphen-container {
+        height: 20rem;
+        width:20rem;
+        border-radius: 100%;
+    }
+    .ball {
+        width:1.1rem;
+        height: 1.1rem;
+        margin-top: 9.5rem;
+        margin-left: 10rem;
+    }
+    .first-hand, .second-hand, .thin-hand {
+        width:7.15rem;
+        height:2px;
+        top:49%;
+    }
+    .first-hand {
+        width:6rem;
+        height:8px;
+        border:solid var(--clr-border) 3px;
+        left:23%;
+    }
+    .thin-hand {
+        width:6.5rem;
+        left:20%;
+    }
+    .second-hand {
+        top:49.6%;
+        left:16.8%;
+        transform: rotate(270deg);
+    }
+    .n-container {
+        font-size: 2.25rem;
+    }   
+    .twelve {
+        margin-left:42.5%;
+        margin-top:1px;
+    }
+    .three-nine {
+        margin-top:2.8rem;
+    }
+    .three {
+        margin-right: 10px;
+    }
+    .nine {
+        margin-left: 10px;
+    }
+    .six {
+        margin-left:48%;
+        margin-top: 2.92rem;
+    }
+    .hyphen {
+        width:1.5rem;
+        height: 2.5px;
+    }
+    .c-1,
+    .c-2,
+    .c-3,
+    .c-4 {
+        margin:0.5rem;
+    }
+    .c-1 {
+        margin-top:2.7rem;
+    }
+    .c-2 {
+        margin-top:2.9rem;
+    }
+    .c-3 {
+        margin-top:7.5rem;
+    }
+    .c-4 {
+        margin-top:3.1rem;
+    }
+    .eleven {
+        margin-left:4.5rem;
+    }
+    .one {
+        margin-right:4.2rem;
+    }
+    .two {
+        margin-right:1.56rem;
+    }
+    .ten {
+        margin-left:1.76rem;
+    }
+    .four {
+        margin-right:1.4rem;
+    }
+    .eight {
+        margin-top:0.45rem;
+        margin-left: 1.5rem;
+    }
+    .five {
+        margin-right: 4.2rem;
+    }
+    .seven {
+        margin-left: 5rem;
+    }
+} 
